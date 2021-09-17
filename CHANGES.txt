@@ -1,0 +1,23 @@
+	hmap version 0.1
+
+- Added support for histogram output -- this feature has proved to be very useful to better observe/analyze the frequency distribution of colors in the output image.
+
+- Added support for reading/decoding "webp" and "vp8" image formats -- these image formats are gaining widespread use on the web nowadays.
+
+- Added support for "blend" image filter as a command line option -- this image filter should be used in conjunction with the "-mono" command line option. See README for more info.
+
+- Added support for "mono-blending" -- the mono filter has proved to be more useful when applied with the "blend opacity". See README for more info.
+
+- Added support for "contrast" image filter as a command line option -- this image filter can be used to increase contrast betweeen grayscale gradients.
+
+- Added support for "invert" image filter as a command line option -- this image filter can be used to reverse the colors of the grayscale output.
+
+- Added support for "gaussian blur" and "box blur" image filters -- usage of these image filters depends on the context of the input image. See README for more info.
+
+- Added command line options "-in" and "-out" as short for "-input" and "-output".
+
+- Optimised image filter combinations -- this results in higher-quality grayscale output.
+
+- Added README file -- which also includes command line usage examples.
+
+- Updated embedded documentation.
