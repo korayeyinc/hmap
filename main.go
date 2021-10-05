@@ -7,6 +7,7 @@
 package main
 
 import (
+	"errors"
 	"flag"
 	"github.com/anthonynsimon/bild/adjust"
 	"github.com/anthonynsimon/bild/blend"
@@ -23,6 +24,7 @@ import (
 	"image/gif"
 	"image/jpeg"
 	"image/png"
+	"io/fs"
 	"log"
 	"os"
 	"strings"
@@ -268,7 +270,13 @@ func fcreate(filename string) *os.File {
 // Helper function for checking errors.
 func check(err error) {
 	if err != nil {
-		log.Fatalln(err)
+		var pathError *fs.PathError
+		
+		if errors.As(err, &pathError) {
+			log.Println("Path error:", pathError.Path)
+		} else {
+			log.Println(err)
+		}
 	}
 }
 
