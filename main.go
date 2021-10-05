@@ -1,7 +1,6 @@
-/* 
- * Heightmap generation tool which makes use of
- * a combination of image processing filters.
- * 
+/*
+ * A simple command line tool for heightmap generation.
+ *
  */
 
 package main
@@ -271,7 +270,7 @@ func fcreate(filename string) *os.File {
 func check(err error) {
 	if err != nil {
 		var pathError *fs.PathError
-		
+
 		if errors.As(err, &pathError) {
 			log.Println("Path error:", pathError.Path)
 		} else {
